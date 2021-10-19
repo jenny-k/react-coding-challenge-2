@@ -1,0 +1,27 @@
+.app {
+  text-align: center;
+  color: #fff;
+}
+
+header {
+  background: #5609b3;
+}
+
+.logo {
+  width: 250px;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.main-nav li a {
+  padding: 1rem;
+  color: #fff;
+}
+
+.d-flex {
+  display: flex;
+}
