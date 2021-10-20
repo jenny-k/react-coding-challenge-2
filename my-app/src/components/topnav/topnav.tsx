@@ -6,7 +6,9 @@ import logo from "./images/logo.png";
 function TopNav() {
   return (
     <div className="d-flex">
-      <img src={logo} alt="Logo" className="logo" />
+      <Link to="/">
+        <img src={logo} alt="Logo" className="logo" />
+      </Link>
       <div>
         <nav>
           <ul className="main-nav">

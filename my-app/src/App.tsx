@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PetDetail from "./components/pet/detail";
 import TopNav from "./components/topnav/topnav";
 import WishListDetail from "./components/wishlist/detail";
+import NotFound from "./components/error/NotFound";
 
 function App() {
   return (
@@ -23,10 +24,11 @@ function App() {
             <h1>Pet Details</h1>
             <PetDetail />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <h1>Home</h1>
             <p>this is home route</p>
           </Route>
+          <Route component={NotFound} />
         </Switch>
 
         <p>Hello from app.tsx</p>
