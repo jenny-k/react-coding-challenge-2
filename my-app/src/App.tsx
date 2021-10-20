@@ -1,39 +1,34 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import logo from "./images/logo.png";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PetDetail from "./components/pet/detail";
+import TopNav from "./components/topnav/topnav";
+import WishListDetail from "./components/wishlist/detail";
 
 function App() {
   return (
     <Router>
       <header>
-        <div className="d-flex">
-          <img src={logo} alt="Logo" className="logo" />
-          <div className="app">
-            <nav>
-              <ul className="main-nav">
-                <li>
-                  <Link to="/">Pets Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/wishlist">Wishlist</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+        <TopNav />
       </header>
 
       <div className="main-content">
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">this is about route</Route>
-          <Route path="/wishlist">this is wishlist route</Route>
-          <Route path="/">This is home route</Route>
+          <Route path="/wishlist">
+            <h1>WishList</h1>
+            <WishListDetail />
+          </Route>
+          <Route path="/detail/:id">
+            <h1>Pet Details</h1>
+            <PetDetail />
+          </Route>
+          <Route path="/">
+            <h1>Home</h1>
+            <p>this is home route</p>
+          </Route>
         </Switch>
+
         <p>Hello from app.tsx</p>
       </div>
     </Router>
