@@ -1,13 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PetDetail from "./components/pet/detail";
+import CardDetail from "./components/card/detail";
 import TopNav from "./components/topnav/topnav";
 import WishListDetail from "./components/wishlist/detail";
-import NotFound from "./components/error/NotFound";
+import NotFound from "./components/error/NotFound"; 
+import CardGrid from "./components/card/grid";
+import WishlistContextProvider from "./wishlistContext";
 
-function App() {
+function App() { 
+
   return (
     <Router>
+      <WishlistContextProvider>
+
       <header>
         <TopNav />
       </header>
@@ -22,17 +27,21 @@ function App() {
           </Route>
           <Route path="/detail/:id">
             <h1>Pet Details</h1>
-            <PetDetail />
+            <CardDetail />
           </Route>
           <Route exact path="/">
             <h1>Home</h1>
             <p>this is home route</p>
+            <CardGrid />
           </Route>
           <Route component={NotFound} />
         </Switch>
 
         <p>Hello from app.tsx</p>
       </div>
+      
+      </WishlistContextProvider>
+
     </Router>
   );
 }

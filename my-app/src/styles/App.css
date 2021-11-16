@@ -19,6 +19,14 @@ header {
 
 .d-flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.w-33 {
+  width: 33%;
 }
 
 .wishlist {
